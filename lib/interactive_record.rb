@@ -52,7 +52,6 @@ class InteractiveRecord
     column = property.keys.first.to_s
     value = property[property.keys.first]
     sql = "SELECT * FROM #{self.table_name} WHERE #{column} = '#{value}'"
-    puts "sql: #{sql}"
     DB[:conn].execute(sql)
   end
 end
