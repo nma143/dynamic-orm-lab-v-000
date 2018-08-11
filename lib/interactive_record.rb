@@ -53,6 +53,6 @@ class InteractiveRecord
       sql = "SELECT * FROM #{self.table_name} WHERE #{property} = '#{value}'"
       puts "sql: #{sql}"
       DB[:conn].execute(sql)
-    end    
+    end
   end
 end
