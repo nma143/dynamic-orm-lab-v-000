@@ -25,8 +25,9 @@ class InteractiveRecord
       puts "property: #{property}"
       if property =='id'
         value = nil
+      else
+        self.send("#{property}=", value)
       end
-      self.send("#{property}=", value)
     end
   end
 
