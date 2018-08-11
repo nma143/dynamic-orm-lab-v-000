@@ -49,7 +49,7 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
   def self.find_by(property)
-    column = property.keys.to_s
+    column = property.keys.first.to_s
     value = property[property.keys]
     sql = "SELECT * FROM #{self.table_name} WHERE #{column} = '#{value}'"
     puts "sql: #{sql}"
