@@ -48,11 +48,9 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
   end
-  def self.find_by(criteria={})
-    criteria.each do |property, value|
-      sql = "SELECT * FROM #{self.table_name} WHERE #{property} = '#{value}'"
-      puts "sql: #{sql}"
-      DB[:conn].execute(sql)
-    end
+  def self.find_by(property)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{property.keys.to_s} = '#{property[property.keys.to_s]}'"
+    puts "sql: #{sql}"
+    DB[:conn].execute(sql)
   end
 end
